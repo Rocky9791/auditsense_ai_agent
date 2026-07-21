@@ -1,5 +1,4 @@
-
-"confidence threshold, calibrated on the PhoneSense corpus, transferred without adjustment to an unrelated finance domain and correctly gated an out-of-scope query"
+Confidence threshold, calibrated on the PhoneSense corpus, transferred without adjustment to an unrelated finance domain and correctly gated an out-of-scope query"
 
 # AuditSense — Agentic RAG for Finance Compliance & Audit Q&A
 

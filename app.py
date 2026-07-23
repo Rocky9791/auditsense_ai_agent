@@ -9,14 +9,24 @@ from core.graph import build_graph
 app = Flask(__name__)
 
 # Build the index ONCE at startup — same principle as your main.py before
-searcher, chunks, sources = build_index(CORPUS, chunk_size=300, overlap=50)
-reranker = Reranker()
-agent = build_graph(searcher, reranker)
+searcher = None
+reranker = None
+agent = None
 
 @app.route("/query", methods=["POST"])
 def query():
+
+    global searcher, reranker, agent
+
+    if agent is None:
+        searcher, chunks, sources = build_index(CORPUS, chunk_size=300, overlap=50)
+        reranker = Reranker()
+        agent = build_graph(searcher, reranker)
+
+
     data = request.get_json()
     user_query = data.get("query", "").strip()
+    
     if not user_query:
         return jsonify({"error": "query field is required"}), 400
 

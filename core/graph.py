@@ -169,7 +169,7 @@ def build_graph(searcher, reranker, llm_call_fn=ollama_llm):
 
 
 if __name__ == "__main__":
-    searcher, chunks, sources = build_index(CORPUS, chunk_size=300, overlap=50)
+    searcher, chunks, sources = build_index(CORPUS[:5], chunk_size=300, overlap=50)
     reranker = Reranker()
 
     # CHANGED: swap llm_call_fn=claude_llm here to demo the Claude backend instead

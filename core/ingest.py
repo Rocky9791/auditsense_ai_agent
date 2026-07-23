@@ -1,5 +1,5 @@
-from chunking import chunk_text
-from hybrid_search import HybridSearcher
+from core.chunking import chunk_text
+from core.hybrid_search import HybridSearcher
 
 def extract_header_from_text(doc):
     return doc[:60]

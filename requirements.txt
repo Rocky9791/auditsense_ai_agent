@@ -1,12 +1,12 @@
 Flask>=3.0
-#langgraph>=0.2
+langgraph>=0.2
 #ollama>=0.1
 #pytest>=8.0
 sentence_transformers
 #anthropic
-#rank_bm25
+rank_bm25
 
 
 gunicorn
-#numpy
+numpy
 #scikit-learn

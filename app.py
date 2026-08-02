@@ -19,8 +19,8 @@ def query():
     global searcher, reranker, agent
 
     if agent is None:
-        searcher, chunks, sources = build_index(CORPUS, chunk_size=300, overlap=50)
-        reranker = Reranker()
+        searcher, chunks, sources = build_index(CORPUS[:5], chunk_size=300, overlap=50)
+        #reranker = Reranker()
         agent = build_graph(searcher, reranker)
 
 
